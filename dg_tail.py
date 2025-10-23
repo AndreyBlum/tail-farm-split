@@ -61,13 +61,14 @@ base_window_name = "Split - "
 
 chars = ['El Copas', "El Debito", "El Credito"]
 main_name = "El Cartas"
+is_tyr = True
 runs = 10
 
 if __name__ == "__main__":
     for run in range(runs):
         print(f"Run {run+1}/{runs}")
         try:
-            trocar_para_janela(get_base_window_name(True, main_name))
+            trocar_para_janela(get_base_window_name(is_tyr, main_name))
         except:
             print("Falhou em trocar janela")
         time.sleep(1)
@@ -90,7 +91,7 @@ if __name__ == "__main__":
         for char in chars:
             time.sleep(0.5)
             mover_mouse_centro()
-            trocar_para_janela(get_base_window_name(True, char))
+            trocar_para_janela(get_base_window_name(is_tyr, char))
             time.sleep(0.5)
             clicar_icone(f"assets/dg.png")
             time.sleep(1)
@@ -104,7 +105,7 @@ if __name__ == "__main__":
             time.sleep(2)
         
         print("Começando a DG")
-        trocar_para_janela(get_base_window_name(True, main_name))
+        trocar_para_janela(get_base_window_name(is_tyr, main_name))
         time.sleep(1)
         clicar_icone("assets/start_dg.png", 0)
         time.sleep(610)
