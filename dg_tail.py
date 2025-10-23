@@ -49,10 +49,16 @@ def scroll_down(times_to_scroll):
     for time in range(times_to_scroll):
         pyautogui.scroll(-500)
 
+def get_base_window_name(is_tyr, charname):
+    if is_tyr:
+        return f"TYRSCRIPTS -{charname} -Discord: https://discord.gg/Ra6rqheU"
+    return f"Split - {charname}"
+
 
 dg_type = "isobu" # Available: isobu, yonbi, kokuou, nibi
 icones = ['dg.png', 'create.png', f'{dg_type}.png']
 base_window_name = "Split - "
+
 chars = ['El Copas', "El Debito", "El Credito"]
 main_name = "El Cartas"
 runs = 10
@@ -61,7 +67,7 @@ if __name__ == "__main__":
     for run in range(runs):
         print(f"Run {run+1}/{runs}")
         try:
-            trocar_para_janela(f"{base_window_name}{main_name}")
+            trocar_para_janela(get_base_window_name(True, main_name))
         except:
             print("Falhou em trocar janela")
         time.sleep(1)
@@ -84,7 +90,7 @@ if __name__ == "__main__":
         for char in chars:
             time.sleep(0.5)
             mover_mouse_centro()
-            trocar_para_janela(f"{base_window_name}{char}")
+            trocar_para_janela(get_base_window_name(True, char))
             time.sleep(0.5)
             clicar_icone(f"assets/dg.png")
             time.sleep(1)
@@ -98,7 +104,7 @@ if __name__ == "__main__":
             time.sleep(2)
         
         print("Começando a DG")
-        trocar_para_janela(f"{base_window_name}{main_name}")
+        trocar_para_janela(get_base_window_name(True, main_name))
         time.sleep(1)
         clicar_icone("assets/start_dg.png", 0)
         time.sleep(610)
