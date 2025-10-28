@@ -53,8 +53,8 @@ def scroll_down(times_to_scroll):
 dg_type = "isobu" # Available: isobu, yonbi, kokuou, nibi
 icones = ['dg.png', 'create.png', f'{dg_type}.png']
 base_window_name = "Split - "
-chars = ['El Copas', "El Debito", "El Credito"]
-main_name = "El Cartas"
+chars = ['Seishin', "Yurei", "Rizaa"]
+main_name = "Dey Z"
 runs = 10
 
 if __name__ == "__main__":
